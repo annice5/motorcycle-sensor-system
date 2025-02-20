@@ -6,15 +6,15 @@ const Footer = () => {
   return (
     <section
       id="contact"
-      className="relative bg-cover bg-center py-16 px-8 md:px-20 text-white"
+      className="relative bg-cover bg-center py-12 px-6 sm:px-12 md:px-20 text-white"
       style={{ backgroundImage: `url(${footer})` }}
     >
-      {/* Background Overlay with Gradient Fade */}
+      {/* Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
 
       {/* Footer Content */}
       <motion.div
-        className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left mt-16 p-6 bg-white/10 backdrop-blur-md rounded-2xl shadow-lg"
+        className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center sm:text-left mt-10 p-6 bg-white/10 backdrop-blur-md rounded-2xl shadow-lg"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
@@ -26,9 +26,9 @@ const Footer = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <h1 className="text-2xl font-bold text-[#977631] flex items-center">
+          <h1 className="text-2xl font-bold text-[#977631] flex justify-center sm:justify-start items-center">
             <span className="bg-white text-[#977631] px-2 rounded-full">M</span>
-            <span className="ml-0 relative z-10  ">otorbike Tech</span>
+            <span className="ml-2 relative z-10">otorbike Tech</span>
           </h1>
         </motion.div>
 
@@ -66,10 +66,9 @@ const Footer = () => {
           transition={{ duration: 1, delay: 0.7 }}
         >
           <h2 className="text-xl font-bold text-[#c29849]">Follow Us</h2>
-          <div className="flex justify-center md:justify-start mt-3 space-x-6">
+          <div className="flex justify-center sm:justify-start mt-3 space-x-6">
             {[
               { platform: "Instagram", icon: <Instagram />, url: "#" },
-             
               { platform: "YouTube", icon: <Youtube />, url: "#" },
             ].map((item, index) => (
               <motion.a
@@ -93,7 +92,7 @@ const Footer = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
       >
-          All Rights Reserved.&copy; {new Date().getFullYear()}
+        All Rights Reserved.&copy; {new Date().getFullYear()}
       </motion.div>
     </section>
   );
