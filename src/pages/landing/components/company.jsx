@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import company from "../../../assets/company.jpg";
 import me from "../../../assets/me.jpg"; // Replace with the actual owner image
 
 const Company = () => {
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
   return (
     <section
+      ref={ref} // Attach ref to the section
       id="innovator"
       className="relative min-h-screen bg-cover bg-center flex items-center justify-center px-6 sm:px-12 md:px-20"
       style={{ backgroundImage: `url(${company})` }}
@@ -13,7 +17,7 @@ const Company = () => {
       <motion.div
         className="absolute inset-0 bg-black bg-opacity-50"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
+        animate={inView ? { opacity: 0.5 } : { opacity: 0 }}
         transition={{ duration: 1.5 }}
       />
 
@@ -23,7 +27,7 @@ const Company = () => {
         <motion.div
           className="w-full md:w-1/2 text-left text-white p-6 md:p-0"
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 1 }}
         >
           <h2 className="text-[#c29849] text-xs sm:text-sm uppercase font-semibold">
@@ -41,15 +45,19 @@ const Company = () => {
         <motion.div
           className="flex flex-col items-center"
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          {/* Image Wrapper with Border */}
-          <div className="relative bg-[#c29849] p-2 rounded-lg">
+          {/* Image Wrapper with Background Frame */}
+          <div className="relative">
+            {/* Golden Background - Extends on Left, Right, and Bottom */}
+            <div className="absolute -bottom-2 -left-2 -right-2 h-52 bg-[#c29849]"></div>
+
+            {/* Image on Top */}
             <img
               src={me}
               alt="innovator"
-              className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover rounded-lg"
+              className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover z-10"
             />
           </div>
 

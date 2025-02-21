@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { Instagram, Youtube } from "lucide-react";
 import footer from "../../../assets/footer.jpg";
 
 const Footer = () => {
+  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
+
   return (
     <section
+      ref={ref} // Attach ref to Footer section
       id="contact"
       className="relative bg-cover bg-center py-12 px-6 sm:px-12 md:px-20 text-white"
       style={{ backgroundImage: `url(${footer})` }}
@@ -16,14 +20,14 @@ const Footer = () => {
       <motion.div
         className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center sm:text-left mt-10 p-6 bg-white/10 backdrop-blur-md rounded-2xl shadow-lg"
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 1, delay: 0.2 }}
       >
         {/* Contact Information */}
         <motion.div
           className="space-y-3"
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
           <h1 className="text-2xl font-bold text-[#977631] flex justify-center sm:justify-start items-center">
@@ -36,7 +40,7 @@ const Footer = () => {
         <motion.div
           className="space-y-3"
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
           <h2 className="text-xl font-bold text-[#c29849]">Quick Links</h2>
@@ -62,7 +66,7 @@ const Footer = () => {
         <motion.div
           className="space-y-3"
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
           transition={{ duration: 1, delay: 0.7 }}
         >
           <h2 className="text-xl font-bold text-[#c29849]">Follow Us</h2>
@@ -89,7 +93,7 @@ const Footer = () => {
       <motion.div
         className="relative z-10 mt-10 text-center text-gray-400 text-sm"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1, delay: 1 }}
       >
         All Rights Reserved.&copy; {new Date().getFullYear()}
