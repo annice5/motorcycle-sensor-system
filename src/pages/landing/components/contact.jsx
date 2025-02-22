@@ -4,7 +4,7 @@ import contactImage from "../../../assets/contactImage.jpg";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
-  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.3,  });
 
   return (
     <section
@@ -38,7 +38,7 @@ const Contact = () => {
         </motion.h2>
 
         <motion.p
-          className="text-sm sm:text-base self-center sm:self-start"
+          className="text-2xl sm:text-base self-center sm:self-start font-light"
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 1, delay: 1 }}
@@ -48,25 +48,25 @@ const Contact = () => {
 
         {/* Contact Information */}
         <motion.div
-          className="mt-10 space-y-4  sm:text-base self-center sm:self-start font-light text-sm"
+          className="mt-10 space-y-4  sm:text-base self-center sm:self-start font-light "
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
           {/* Email */}
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 text-2xl">
             <Mail className="w-5 h-5 text-[#c29849]" />
             <strong>Email:</strong> contact@motorbiketech.com
           </p>
 
           {/* Phone */}
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 text-2xl">
             <Phone className="w-5 h-5 text-[#c29849]" />
             <strong>Phone:</strong> +233 544168870
           </p>
 
           {/* Address */}
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 text-2xl">
             <MapPin className="w-5 h-5 text-[#c29849]" />
             <strong>Address:</strong> Berekum East, Bono Region
           </p>

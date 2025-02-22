@@ -8,7 +8,7 @@ import heroImage from "../../../assets/heroImage.jpg";
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   // Detect scroll position for navbar effect
   useEffect(() => {
