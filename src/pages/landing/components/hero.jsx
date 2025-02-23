@@ -95,7 +95,7 @@ const Hero = () => {
           animate={inView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
-          Motorcycle Safety
+          Motorcycle Stand Sensor 
         </motion.h2>
       </motion.div>
     </section>

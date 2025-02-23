@@ -38,7 +38,7 @@ const Contact = () => {
         </motion.h2>
 
         <motion.p
-          className="text-sm sm:text-base self-center sm:self-start font-light"
+          className="text-lg sm:text-base self-center sm:self-start font-light"
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 1, delay: 1 }}
