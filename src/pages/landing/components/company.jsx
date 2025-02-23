@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import company from "../../../assets/company.jpg";
-import me from "../../../assets/me.jpg"; // Replace with the actual owner image
+import innovator from "../../../assets/innovator.jpg"; // Replace with the actual owner image
 
 const Company = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
@@ -30,10 +30,10 @@ const Company = () => {
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-[#c29849] text-xs sm:text-sm uppercase font-semibold">
+          <h2 className="text-[#c29849] text-sm sm:text-sm uppercase font-semibold">
             ABOUT INNOVATOR
           </h2>
-          <p className="text-white mt-3 text-sm sm:text-base font-light leading-relaxed">
+          <p className="text-white mt-3 text-lg sm:text-base font-light leading-relaxed">
             A young male innovator from Berekum East, Bono Region seeks to address motorcycle
             safety by developing a sensor system that connects the motorcycle's ignition to its
             stand. He seeks mentorship to refine his idea and funding to develop and test the
@@ -55,7 +55,7 @@ const Company = () => {
 
             {/* Image on Top */}
             <img
-              src={me}
+              src={innovator}
               alt="innovator"
               className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover z-10"
             />

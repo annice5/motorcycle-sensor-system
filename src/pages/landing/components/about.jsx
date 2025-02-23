@@ -54,7 +54,7 @@ const About = () => {
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         >
           <motion.p
-            className="text-[#c29849] text-xs sm:text-sm uppercase tracking-widest"
+            className="text-[#c29849] text-sm sm:text-sm uppercase tracking-widest"
             initial={{ y: -10, opacity: 0 }}
             animate={inView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -72,7 +72,7 @@ const About = () => {
           </motion.h1>
 
           <motion.p
-            className="text-white mt-3 text-sm sm:text-base font-light leading-relaxed"
+            className="text-white mt-3 text-lg sm:text-base font-light leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
@@ -82,7 +82,7 @@ const About = () => {
           </motion.p>
 
           <motion.p
-            className="text-white mt-2 text-sm sm:text-base font-light leading-relaxed"
+            className="text-white mt-2 text-lg sm:text-base font-light leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}

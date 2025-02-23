@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Instagram, Youtube } from "lucide-react";
 import footer from "../../../assets/footer.jpg";
+import logoImage from "../../../assets/logo.png"; // Import your logo image
 
 const Footer = () => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
     <section
-      ref={ref} // Attach ref to Footer section
+      ref={ref}
       id="contact"
       className="relative bg-cover bg-center py-12 px-6 sm:px-12 md:px-20 text-white"
       style={{ backgroundImage: `url(${footer})` }}
@@ -25,15 +26,12 @@ const Footer = () => {
       >
         {/* Contact Information */}
         <motion.div
-          className="space-y-3"
+          className="flex justify-center sm:justify-start items-center"
           initial={{ opacity: 0, x: -50 }}
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <h1 className="text-2xl font-bold text-[#977631] flex justify-center sm:justify-start items-center">
-            <span className="bg-white text-[#977631] px-2 rounded-full">M</span>
-            <span className="ml-2 relative z-10">otorbike Tech</span>
-          </h1>
+          <img src={logoImage} alt="Motorbike Tech Logo" className="w-32 h-auto" />
         </motion.div>
 
         {/* Quick Links */}

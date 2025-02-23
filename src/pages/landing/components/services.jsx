@@ -59,7 +59,7 @@ const Services = () => {
           Our Services
         </motion.h2>
         <p
-          className="text-gray-300 max-w-2xl mx-auto mb-12 font-light"
+          className="text-gray-300 max-w-2xl mx-auto mb-12 font-light text-lg"
           style={{
             opacity: inView ? 1 : 0,
             transition: "opacity 1s ease-in-out",

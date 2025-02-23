@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import heroImage from "../../../assets/heroImage.jpg";
+import logo from "../../../assets/logo.png"; // Replace with your actual logo image path
 
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,10 +43,9 @@ const Hero = () => {
       >
         <nav className="container mx-auto flex justify-between items-center px-4 md:px-8 py-4">
           {/* Logo */}
-          <h1 className="text-xl md:text-2xl font-bold text-[#977631] flex items-center">
-            <span className="bg-white text-[#977631] px-2 rounded-full">M</span>
-            <span className="ml-0 relative z-10">otorbike Tech</span>
-          </h1>
+          <Link to="home" smooth={true} duration={500}>
+            <img src={logo} alt="Motorbike Tech Logo" className="h-10 sm:h-12 object-contain cursor-pointer" />
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-6 font-light">
