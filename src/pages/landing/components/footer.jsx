@@ -74,7 +74,7 @@ const Footer = () => {
     animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
     transition={{ duration: 1, delay: 0.7 }}
   >
-    <h2 className=" mr-10 text-xl font-bold text-[#c29849]">Follow Us</h2>
+    <h2 className=" mr-6 text-xl font-bold text-[#c29849]">Follow Us</h2>
     <div className="flex mt-3 space-x-6">
       {[
         { platform: "Instagram", icon: <Instagram />, url: "https://www.instagram.com/motorstandsensor?igsh=NDYxeGxvajFuNDNp&utm_source=qr" },
