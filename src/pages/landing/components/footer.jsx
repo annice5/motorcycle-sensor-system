@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Instagram, Youtube } from "lucide-react";
+import { Facebook, Instagram, Youtube } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 import footer from "../../../assets/footer.jpg";
 import logoImage from "../../../assets/logo.png"; // Import your logo image
 
@@ -43,7 +44,7 @@ const Footer = () => {
         >
           <h2 className="text-xl font-bold text-[#c29849]">Quick Links</h2>
           <ul className="mt-2 space-y-2">
-            {["Home", "About", "Services", "Contact"].map((item, index) => (
+            {["Home", "About", "Service", "Company", "Contact"].map((item, index) => (
               <motion.li
                 key={index}
                 whileHover={{ scale: 1.1, color: "#c29849" }}
@@ -70,8 +71,9 @@ const Footer = () => {
           <h2 className="text-xl font-bold text-[#c29849]">Follow Us</h2>
           <div className="flex justify-center sm:justify-start mt-3 space-x-6">
             {[
-              { platform: "Instagram", icon: <Instagram />, url: "#" },
-              { platform: "YouTube", icon: <Youtube />, url: "#" },
+              { platform: "Instagram", icon: <Instagram />, url: "https://www.instagram.com/motorstandsensor?igsh=NDYxeGxvajFuNDNp&utm_source=qr" },
+              { platform: "Facebook", icon: <Facebook/>, url: "https://www.facebook.com/share/15PX5cq9b7/?mibextid=wwXIfr" },
+              { platform: "TikTok", icon: <FaTiktok/>, url: "https://www.tiktok.com/@motorstandsensor?_t=ZM-8uC2b2mmE1G&_r=1" },
             ].map((item, index) => (
               <motion.a
                 key={index}

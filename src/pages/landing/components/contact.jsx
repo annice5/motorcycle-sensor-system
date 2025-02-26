@@ -56,7 +56,7 @@ const Contact = () => {
           {/* Email */}
           <p className="flex items-center gap-2 ">
             <Mail className="w-5 h-5 text-[#c29849]" />
-            <strong>Email:</strong> contact@motorbiketech.com
+            <strong>Email:</strong> motorstandsensor@gmail.com
           </p>
 
           {/* Phone */}

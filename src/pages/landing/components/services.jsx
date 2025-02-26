@@ -39,7 +39,7 @@ const Services = () => {
 
   return (
     <section
-      id="services"
+      id="service"
       ref={ref}
       className="relative py-16 text-white bg-cover bg-center"
       style={{ backgroundImage: `url(${services})` }}

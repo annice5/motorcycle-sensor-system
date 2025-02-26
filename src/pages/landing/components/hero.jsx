@@ -22,6 +22,7 @@ const Hero = () => {
 
   return (
     <section
+       id="home"
       ref={ref} // Attach ref to Hero section
       className="relative w-full min-h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden"
       style={{ backgroundImage: `url(${heroImage})` }}
@@ -89,14 +90,14 @@ const Hero = () => {
 
       {/* Hero Content */}
       <motion.div className="relative z-10 px-6 md:px-12 text-center bottom-32">
-        <motion.h2
-          className="text-4xl font-extrabold sm:text-4xl md:text-5xl lg:text-6xl text-[#977631] mb-10 sm:mb-16 md:mb-20"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={inView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-        >
-          Motorcycle Stand Sensor 
-        </motion.h2>
+      <motion.h2
+        className="text-4xl font-extrabold sm:text-4xl md:text-5xl lg:text-6xl text-[#b89c67] mb-10 sm:mb-16 md:mb-20"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={inView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+       transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+      >
+         Motorcycle Stand Sensor 
+      </motion.h2>
       </motion.div>
     </section>
   );
