@@ -4,7 +4,7 @@ import contactImage from "../../../assets/contactImage.jpg";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
-  const { ref, inView } = useInView({ threshold: 0.3,  });
+  const { ref, inView } = useInView({ threshold: 0.2,  });
 
   return (
     <section
