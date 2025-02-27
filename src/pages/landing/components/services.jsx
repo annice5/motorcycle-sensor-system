@@ -1,63 +1,67 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ShieldCheck, Bell, Wrench, CloudRain, CheckCircle } from "lucide-react";
-import services from "../../../assets/services.jpg";
+import services from '../../../assets/services.jpg';
+import serviceImage1 from "../../../assets/serviceImage1.jpg";
+import serviceImage2 from '../../../assets/serviceImage2.jpg';
+import serviceImage3 from '../../../assets/serviceImage3.jpg';
+import serviceImage4 from '../../../assets/serviceImage4.jpg';
+import serviceImage5 from '../../../assets/serviceImage5.jpg';
 
 const serviceList = [
+ 
   {
-    icon: <ShieldCheck size={40} />,
-    title: "Automatic Stand Detection",
-    description: "Prevents the motorcycle from starting unless the stand is properly unmounted.",
-  },
-  {
-    icon: <Bell size={40} />,
+    image: serviceImage2,
     title: "Real-Time Alerts",
     description: "Notifies riders when the stand is still engaged to avoid accidents.",
   },
   {
-    icon: <Wrench size={40} />,
+    image: serviceImage3,
     title: "Easy Installation",
     description: "Designed for a quick and simple setup without special tools.",
   },
   {
-    icon: <CloudRain size={40} />,
+    image: serviceImage4,
     title: "Weather Resistant",
     description: "Built to withstand all riding conditions, ensuring long-term reliability.",
   },
   {
-    icon: <CheckCircle size={40} />,
-    title: "Safety Compliance",
-    description: "Ensures adherence to road safety regulations and standards.",
+    image: serviceImage5,
+    title: "Automatic Stand Detection",
+    description: "Prevents the motorcycle from starting unless the stand is properly unmounted.",
   },
 ];
 
 const Services = () => {
   const { ref, inView } = useInView({
-    
-    threshold: 0.2, // Animation triggers when 20% of the section is visible
+    threshold: 0.2,
   });
 
   return (
     <section
       id="service"
       ref={ref}
-      className="relative py-16 text-white bg-cover bg-center"
+      className="py-16 bg-cover bg-center"
       style={{ backgroundImage: `url(${services})` }}
     >
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black opacity-70"></div>
+       {/* Background Overlay */}
+       <motion.div
+        className="absolute inset-0 bg-black bg-opacity-70"
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 0.5 } : { opacity: 0 }}
+        transition={{ duration: 1.5 }}
+      />
 
-      {/* Content */}
-      <div className="relative max-w-6xl mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl font-bold text-[#c29849] mb-6"
+          className="text-3xl sm:text-4xl font-bold text-[#c29849] mb-6 text-center "
           initial={{ opacity: 0, y: -30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
         >
           Our Services
         </motion.h2>
+
         <p
           className="text-gray-300 max-w-2xl mx-auto mb-12 font-light text-lg"
           style={{
@@ -70,7 +74,7 @@ const Services = () => {
 
         {/* Service Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 0.3 }}
@@ -78,14 +82,29 @@ const Services = () => {
           {serviceList.map((service, index) => (
             <motion.div
               key={index}
-              className="p-6 bg-white/10 backdrop-blur-lg rounded-lg shadow-lg border border-white/10 text-center space-y-4"
+              className="flex items-center space-x-4 p-4 md:p-6 bg-opacity-75 "
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.2 + index * 0.2 }}
             >
-              <div className="text-[#c29849] flex justify-center">{service.icon}</div>
-              <h3 className="text-xl font-semibold">{service.title}</h3>
-              <p className="text-gray-300 font-light">{service.description}</p>
+              {/* Image with Frame */}
+              <div className="relative ">
+                {/* Golden Frame */}
+                <div className="absolute -bottom-1 -left-1 -top-1 w-20   bg-[#c29849] "></div>
+
+                {/* Image */}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="relative w-40 h-20 object-cover z-10 "
+                />
+              </div>
+
+              {/* Text Content */}
+              <div className="text-left">
+                <h3 className="text-lg md:text-xl font-bold text-[#c29849]">{service.title}</h3>
+                <p className="text-gray-300 font-light md:text-base">{service.description}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
