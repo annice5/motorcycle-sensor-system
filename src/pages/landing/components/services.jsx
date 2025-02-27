@@ -63,7 +63,7 @@ const Services = () => {
         </motion.h2>
 
         <p
-          className="text-gray-300 max-w-2xl mx-auto mb-12 font-light text-lg"
+          className="text-white max-w-2xl mx-auto mb-12 font-light text-lg"
           style={{
             opacity: inView ? 1 : 0,
             transition: "opacity 1s ease-in-out",
@@ -103,7 +103,7 @@ const Services = () => {
               {/* Text Content */}
               <div className="text-left">
                 <h3 className="text-lg md:text-xl font-bold text-[#c29849]">{service.title}</h3>
-                <p className="text-gray-300 font-light md:text-base">{service.description}</p>
+                <p className="text-white font-light md:text-base">{service.description}</p>
               </div>
             </motion.div>
           ))}
