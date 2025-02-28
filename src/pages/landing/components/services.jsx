@@ -38,23 +38,23 @@ const Services = () => {
 
   return (
     <section
-      id="service"
-      ref={ref}
-      className="py-16 bg-cover bg-center"
-      style={{ backgroundImage: `url(${services})` }}
-    >
-       {/* Background Overlay */}
-       <motion.div
+    id="service"
+    ref={ref}
+    className="relative py-16  bg-cover bg-center"
+    style={{ backgroundImage: `url(${services})` }}
+  >
+    {/* Background Overlay */}
+    <motion.div
         className="absolute inset-0 bg-black bg-opacity-70"
         initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 0.5 } : { opacity: 0 }}
+        animate={inView ? { opacity: 0.4 } : { opacity: 0 }}
         transition={{ duration: 1.5 }}
       />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl font-bold text-[#c29849] mb-6 text-center "
+          className="text-3xl sm:text-4xl font-bold text-[#c29849] mb-6 text-center mix-blend-lighten "
           initial={{ opacity: 0, y: -30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
@@ -63,7 +63,7 @@ const Services = () => {
         </motion.h2>
 
         <p
-          className="text-white max-w-2xl mx-auto mb-12 font-light text-lg"
+          className=" text-white max-w-2xl mx-auto mb-12 font-light text-lg mix-blend-lighten"
           style={{
             opacity: inView ? 1 : 0,
             transition: "opacity 1s ease-in-out",
@@ -102,8 +102,8 @@ const Services = () => {
 
               {/* Text Content */}
               <div className="text-left">
-                <h3 className="text-lg md:text-xl font-bold text-[#c29849]">{service.title}</h3>
-                <p className="text-white font-light md:text-base">{service.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-[#c29849] mix-blend-lighten">{service.title}</h3>
+                <p className="text-white font-light md:text-base text-sm mix-blend-lighten">{service.description}</p>
               </div>
             </motion.div>
           ))}
