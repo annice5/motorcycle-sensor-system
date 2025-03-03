@@ -9,7 +9,7 @@ const Company = () => {
   return (
     <section
       ref={ref} // Attach ref to the section
-      id="company"
+      id="innovator"
       className="relative min-h-screen bg-cover bg-center flex items-center justify-center px-6 sm:px-12 md:px-20"
       style={{ backgroundImage: `url(${company})` }}
     >

@@ -69,7 +69,7 @@ const Hero = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-6 font-light">
-            {["Home", "About", "Company", "Service", "Contact"].map((item) => (
+            {["Home", "About", "Innovator", "Service", "Contact"].map((item) => (
               <Link
                 key={item}
                 to={item.toLowerCase()}
@@ -94,7 +94,7 @@ const Hero = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden flex flex-col items-center bg-black/90 backdrop-blur-md py-4 font-light space-y-3">
-            {["Home", "About", "Company", "Service", "Contact"].map((item) => (
+            {["Home", "About", "Innovator", "Service", "Contact"].map((item) => (
               <Link
                 key={item}
                 to={item.toLowerCase()}
