@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import company from "../../../assets/company.jpg";
-import innovator from "../../../assets/innovator.jpg"; // Replace with the actual owner image
+import innovatorOne from '../../../assets/innovatorOne.jpeg';
 
 const Company = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
@@ -55,9 +55,9 @@ const Company = () => {
 
             {/* Image on Top */}
             <img
-              src={innovator}
-              alt="innovator"
-              className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover z-10"
+                src={innovatorOne}
+                alt="innovator"
+                className="relative w-60 h-72 sm:w-72 sm:h-80 md:w-80 md:h-96 object-cover object-top z-10"
             />
           </div>
 
